@@ -1,1 +1,5 @@
 primeiras anotações do blog
+
+categorias familia de assuntos
+tags:marcaçoes dentro de categorias
+AXEX- para usar em segurança, bloqueia  bruteforce , implementar no sistema de controle
