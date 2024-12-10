@@ -1,0 +1,65 @@
+1-criar o requeriments.txt
+obs, controle de versoes dos packs Django>=5.1.3,<5.2 quer dizer maior que a versao atual, mais ainda dentro
+
+fazer dotenv
+
+settings
+nao mudar o nome das variaveis do settings para o .env
+importar os para dentro da settings.py
+secret key
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())" comando para
+gerar secretkeys
+_____________________________________________________________________________________
+ouvir uma porta
+netstat -ano | findstr :5432
+tasklist | findstr 4408
+_____________________________________________________________________________________
+captura de variavel do .env
+h.strip() for h in os.getenv("ALLOWED_HOSTS", "").split(",")
+    if h.strip()
+ h.strip()  remove os espaços desnecessarios
+ _____________________________________________________________________________________
+
+para o media e o static root, criar um datadir com  BASE_DIR.PARENT / data/web
+comando para buildar docker-compose up --build(so a primeira vez)
+quando for buildar, e montar com 2 container se comunicando, o nome do  host dodb, deve ser o do container
+POSTGRES_HOST="psql"
+para forçar a recria~ção docker-compose up --build
+docker-compose up -d para fazer a subida oculta e nao perder oterminal
+___________________________________
+limpeza docker
+O Docker introduziu novos namespaces e comandos que todos deveriam finalmente aprender e não ficar presos aos
+velhos hábitos. Aqui está a documentação , e aqui estão alguns exemplos:
+
+Excluindo contêineres que não são mais necessários (parado)
+
+docker container prune
+Excluindo imagens que não são mais necessárias
+
+o que significa que ele só exclui imagens que não são marcadas e não são apontadas
+por "mais recentes" - então nenhuma imagem real que você pode usar regularmente é excluída
+
+docker image prune
+Exclua todos os volumes que não são usados ​​por nenhum contêiner existente
+
+(até mesmo contêineres parados reivindicam volumes). Isso geralmente limpa volumes
+anônimos pendentes de contêineres que foram excluídos há muito tempo. Ele nunca deve excluir volumes nomeados, pois os contêineres desses devem existir/estar em execução. Tenha cuidado, certifique-se de que sua pilha esteja pelo menos em execução antes de prosseguir com este
+
+docker volume prune
+O mesmo para redes não utilizadas
+
+docker network prune
+E finalmente, se você quiser se livrar de todo o lixo - para garantir
+que nada aconteça com sua produção, certifique-se de que todas as pilhas estejam em execução e então execute
+
+docker system prune
+
+comando para django  docker-compose run --rm djangoapp python
+
+quando der runserver pela linha de comando sh, ver se o container ta ativado, pra podero server rodar,
+
+
+como injetar por context processors
+
+função que recebe  request e retorna um dicionario
+,isso serve para fazer muitas coisas ao mesmo tempo

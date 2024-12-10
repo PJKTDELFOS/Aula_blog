@@ -1,0 +1,17 @@
+docker-compose up -d subir  oculto
+docker-compose up --build subir alterações
+docker-compose up começar o container
+docker-compose run --rm djangoapp python manage.py check
+docker-compose run --rm djangoapp python manage.py runserver   iniciar o servidro
+(primeiro faça o compose up - d e depois mande o runserver
+docker-compose run --rm djangoapp python manage.py makemigrations fazer migraçoes
+docker-compose run --rm djangoapp python manage.py migrate aplicar migraçoes
+docker-compose run --rm djangoapp python manage.py createsuperuser criar super usuario
+docker-compose run --rm djangoapp python manage.py startapp Blog12  criar o app blog
+
+super-user:adminalbert
+senha 15Al#1992a
+
+abrir pelo django app
+
+o docker esta vendo a pasta utils, ,  e esta funcionando

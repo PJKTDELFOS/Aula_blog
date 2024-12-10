@@ -4,6 +4,7 @@
 gunicorn-error-log
 __localcode
 /data/
+/dotenv_files/.env
 
 # Django #
 *.log
@@ -106,7 +107,7 @@ celerybeat-schedule.*
 .env
 .venv
 env/
-venv/
+blog/
 ENV/
 env.bak/
 venv.bak/
