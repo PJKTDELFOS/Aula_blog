@@ -11,7 +11,7 @@ class MenuLink(models.Model):
         verbose_name_plural = "Menu Links"
 
     text=models.CharField(max_length=50)
-    url_or_path=models.TextField(max_length=2048)
+    url_or_path=models.CharField(max_length=2048)
     new_tab = models.BooleanField(default=False)
     site_setup=models.ForeignKey('SiteSetup',on_delete=models.CASCADE,
                                  blank=True,null=True,default=None)
@@ -41,8 +41,18 @@ class SiteSetup(models.Model):
                                 default='',
                                 validators=[validate_png])
 
-    def sava(self,*args,**kwargs):
+    def save(self,*args,**kwargs):
+        currente_favicon_name = str(self.favicon.name)
         super().save(*args,**kwargs)
+        favicon_change = False
+        if self.favicon:
+            favicon_change=currente_favicon_name!=self.favicon.name
+        if favicon_change:
+            resize_image(self.favicon,32)
+
+
+
+
 
 
 

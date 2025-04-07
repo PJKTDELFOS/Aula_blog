@@ -10,6 +10,7 @@ def site_setup(request):
     return {
         'site_setup':setup
     }
+#captura do modelo
 
 #atentar para pegar as variaveis de atributos da classe
 #instanciada
